@@ -8,19 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\dalpakin\\.nuget\\packages\\": {}
+    "C:\\Users\\fcurukcu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dalpakin\\source\\repos\\ieuoasis001\\fdoCurrApplication\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\dalpakin\\source\\repos\\ieuoasis001\\fdoCurrApplication\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\dalpakin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dalpakin\\source\\repos\\ieuoasis001\\fdoCurrApplication\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\fcurukcu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dalpakin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fcurukcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
