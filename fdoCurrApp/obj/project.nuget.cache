@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tVYwU7Kx+OA+QeTDrNHcxsvLPsEtWKSucIluJ/dvn/jXsGk72k6zTsvrfGqrQO9pteJ4Sij5dpkiS1dDFOS58w==",
+  "dgSpecHash": "IYmEaznzepAAw93y2sIMvTc0HLqgGucwwfSoDY5OOaNui2DlcWD4Z5HuVCk/nH66ZEOlhQLfo+KyYMheSPD+Wg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fcurukcu\\source\\repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
+  "projectFilePath": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fcurukcu\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\fcurukcu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
