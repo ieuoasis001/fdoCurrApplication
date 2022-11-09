@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj": {}
+    "C:\\Users\\dalpakin\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj": {
+    "C:\\Users\\dalpakin\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
+        "projectUniqueName": "C:\\Users\\dalpakin\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
         "projectName": "fdoCurrApp",
-        "projectPath": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
-        "packagesPath": "C:\\Users\\fcurukcu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fcurukcu\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\obj\\",
+        "projectPath": "C:\\Users\\dalpakin\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\fdoCurrApp.csproj",
+        "packagesPath": "C:\\Users\\dalpakin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dalpakin\\Source\\Repos\\fdoCurrApplication\\fdoCurrApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fcurukcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dalpakin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
