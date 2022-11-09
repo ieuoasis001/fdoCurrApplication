@@ -1,4 +1,101 @@
-﻿@{
+﻿@model IEnumerable<fdoCurrApp.Models.Curr>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.f)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fdo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.faculty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.currCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.uniCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.courseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.credit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fdo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.faculty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uniCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.credit)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
     ViewData["Title"] = "Müfredat Girişi";
 }
 
@@ -6,73 +103,75 @@
     <h2>Eklenecek İlgili Müfredat</h2>
     <p>Sadece Seçmeli Ders İçerikleri Girilecektir</p>
 
-    <div class="row">   
-    <div class="col-lg-6">   
-    <table class="table">
-        <thead>
-            <tr>
-                <th colspan="3">Güz Dönemi</th>
-                <th colspan="2">1.sınıf</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Ders Kodu</td>
-                <td>Ders Adı</td>
-                <td>İEU Kredisi</td>
-                <td>AKTS Kredisi</td>
-                <td>İçerik Ekle</td>
-            </tr>
-            <tr>
-                <td>ACC 100</td>
-                <td>Matematik</td>
-                <td>3</td>
-                <td>4</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>ELEC 001</td>
-                <td>Seçmeli Ders</td>
-                <td>3</td>
-                <td>5</td>
-                <td>+</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">Güz Dönemi</th>
+                        <th colspan="2">1.sınıf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ders Kodu</td>
+                        <td>Ders Adı</td>
+                        <td>İEU Kredisi</td>
+                        <td>AKTS Kredisi</td>
+                        <td>İçerik Ekle</td>
+                    </tr>
+                    <tr>
+                        <td>ACC 100</td>
+                        <td>Matematik</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>ELEC 001</td>
+                        <td>Seçmeli Ders</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="col-lg-6">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th colspan="3">Bahar Dönemi</th>
-                    <th colspan="2">1.sınıf</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ders Kodu</td>
-                    <td>Ders Adı</td>
-                    <td>İEU Kredisi</td>
-                    <td>AKTS Kredisi</td>
-                    <td>İçerik Ekle</td>
-                </tr>
-                <tr>
-                    <td>ACC 100</td>
-                    <td>Matematik</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>ELEC 001</td>
-                    <td>Seçmeli Ders</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>+</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <div class="col-lg-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">Bahar Dönemi</th>
+                        <th colspan="2">1.sınıf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ders Kodu</td>
+                        <td>Ders Adı</td>
+                        <td>İEU Kredisi</td>
+                        <td>AKTS Kredisi</td>
+                        <td>İçerik Ekle</td>
+                    </tr>
+                    <tr>
+                        <td>ACC 100</td>
+                        <td>Matematik</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>ELEC 001</td>
+                        <td>Seçmeli Ders</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+
