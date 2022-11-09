@@ -1,10 +1,18 @@
-﻿@{
+﻿@model fdoCurrApp.Models.Curr;
+
+@{
     ViewData["Title"] = "Müfredat Girişi";
 }
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<h4>Name</h4>
+@Model.courseName
+
+<h4>Uni Kodu</h4>
+@Model.uniCode
 
 <div class="container">
-    <h2>Eklenecek İlgili Müfredat</h2>
-    <p>Sadece Seçmeli Ders İçerikleri Girilecektir</p>
 
     <div class="row">   
     <div class="col-lg-6">   
@@ -15,7 +23,7 @@
                 <th colspan="2">1.sınıf</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>            
             <tr>
                 <td>Ders Kodu</td>
                 <td>Ders Adı</td>
@@ -23,20 +31,16 @@
                 <td>AKTS Kredisi</td>
                 <td>İçerik Ekle</td>
             </tr>
-            <tr>
-                <td>ACC 100</td>
-                <td>Matematik</td>
-                <td>3</td>
-                <td>4</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>ELEC 001</td>
-                <td>Seçmeli Ders</td>
-                <td>3</td>
-                <td>5</td>
-                <td>+</td>
-            </tr>
+            
+           @for(var i=0;i<6;i++){
+                <tr>
+                    <td>ACC 100 @i</td>
+                    <td>Matematik @i</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>-</td>
+                </tr>
+           }
         </tbody>
     </table>
     </div>
