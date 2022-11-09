@@ -8,5 +8,13 @@ namespace fdoCurrApp.Controllers
         {
             return View();
         }
+
+        private readonly ILogger<CurrController> _logger;
+
+        public CurrController(ILogger<CurrController> logger)
+        {
+            _logger = logger;
+        }
     }
 }
+

@@ -2,6 +2,19 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 /.vs/fdoCurrApp/FileContentIndex/d7bc0867-1857-4444-8a44-135a1516e36d.vsidx
 /.vs/fdoCurrApp/FileContentIndex/6076a094-64db-4670-9ce9-fdc8fc707a51.vsidx
 /.vs/fdoCurrApp/FileContentIndex/4748d3f1-4e5c-42fb-9399-498121261635.vsidx
+=======
+*.v2
+>>>>>>> origin/main
+/.vs/fdoCurrApp/FileContentIndex/57b3c6fc-5672-4e48-af23-a65423206658.vsidx
+/.vs/fdoCurrApp/FileContentIndex/54a15153-f1f3-43fd-b5fb-c4d25b51d7a9.vsidx
+/.vs/fdoCurrApp/FileContentIndex/09cfb68e-7ffb-4b38-bcae-c7b922ebac34.vsidx
+/.vs/fdoCurrApp/FileContentIndex/d1fa49d7-6956-4b1f-8404-43a356f8f44a.vsidx
+/.vs/fdoCurrApp/FileContentIndex/cd4c4291-f505-4766-9d73-b1484b7f6d1e.vsidx
+/.vs/fdoCurrApp/FileContentIndex/b889a535-cbb9-4469-b31b-3c5b66978b2c.vsidx
+/.vs/fdoCurrApp/FileContentIndex/a37b5ed9-7728-488a-a9d5-aba22d1f2fd8.vsidx
+/.vs/fdoCurrApp/FileContentIndex/9e6ed50b-0b39-4cf3-b18e-291f492f04a6.vsidx
+/.vs/fdoCurrApp/FileContentIndex/62c6d1ca-268e-4f18-9471-19a1d4edc8fb.vsidx
