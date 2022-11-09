@@ -8,6 +8,7 @@ namespace fdoCurrApp.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
 
         private readonly ILogger<CurrController> _logger;
 
@@ -18,3 +19,7 @@ namespace fdoCurrApp.Controllers
     }
 }
 
+=======
+    }
+}
+>>>>>>> origin/main
