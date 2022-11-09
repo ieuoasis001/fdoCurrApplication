@@ -12,24 +12,84 @@
 <h4>Uni Kodu</h4>
 @Model.uniCode*@
 
-<div class="container">
+<div class="row">   
+    <div class="col-lg-8"> 
+        <div class="row">
+            <div class="col-lg-4">   
+                @for(var j=1;j<5;j++){
+                <table class="table table-striped table-responsive">
+                    <thead>
+                        <tr>
+                            <th colspan="5">Güz Dönemi @j .Sınıf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Ders Kodu</th>
+                            <th>Ders Adı</th>
+                            <th>İEU Kredisi</th>
+                            <th>AKTS Kredisi</th>
+                        </tr>
 
-    <div class="row">   
-    <div class="col-lg-6">   
-     @for(var j=1;j<5;j++){
-        <table class="table">
+                        @for (var i = 0; i < 6; i++)
+                        {
+                            <tr>
+                                <td>ACC 100 @i</td>
+                                <td>Matematik @i</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                }
+    
+            </div>
+
+            <div class="col-lg-4">
+                    @for(var j=1;j<5;j++){
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                    <th colspan="5">Bahar Dönemi @j .Sınıf</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Ders Kodu</th>
+                                <th>Ders Adı</th>
+                                <th>İEU Kredisi</th>
+                                <th>AKTS Kredisi</th>
+                            </tr>
+
+                                @for (var i = 0; i < 6; i++)
+                                {
+                                    <tr>
+                                        <td>ELEC 00 @i</td>
+                                        <td>Seçmeli @i</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                    </tr>
+                                }
+                        </tbody>
+                    </table>
+                    }
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <table class="table table-striped table-responsive">
             <thead>
                 <tr>
-                    <th colspan="5">Güz Dönemi @j .Sınıf</th>
+                    <th colspan="5">Seçmeli Ders Listesi</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Ders Kodu</td>
-                    <td>Ders Adı</td>
-                    <td>İEU Kredisi</td>
-                    <td>AKTS Kredisi</td>
-                    <td>İçerik Ekle</td>
+                    <th>Ders Kodu</th>
+                    <th>Ders Adı</th>
+                    <th>İEU Kredisi</th>
+                    <th>AKTS Kredisi</th>
                 </tr>
 
                 @for (var i = 0; i < 6; i++)
@@ -39,45 +99,9 @@
                         <td>Matematik @i</td>
                         <td>3</td>
                         <td>4</td>
-                        <td>-</td>
                     </tr>
                 }
             </tbody>
         </table>
-     }
-    
-    </div>
-
-    <div class="col-lg-6">
-         @for(var j=1;j<5;j++){
-            <table class="table">
-                <thead>
-                    <tr>
-                         <th colspan="5">Bahar Dönemi @j .Sınıf</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ders Kodu</td>
-                        <td>Ders Adı</td>
-                        <td>İEU Kredisi</td>
-                        <td>AKTS Kredisi</td>
-                        <td>İçerik Ekle</td>
-                    </tr>
-
-                        @for (var i = 0; i < 6; i++)
-                        {
-                            <tr>
-                                <td>ELEC 00 @i</td>
-                                <td>Seçmeli @i</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>+</td>
-                            </tr>
-                        }
-                </tbody>
-            </table>
-         }
-    </div>
     </div>
 </div>
