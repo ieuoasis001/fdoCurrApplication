@@ -38,24 +38,27 @@ namespace fdoCurrApp.Controllers
             //Lecturer lec = _context.lecturerInfo.SingleOrDefault(x => x.lec_id == login.lec_id && x.lec_id == login.lec_id);
             string lecPass = Encrypt(Encrypt(login.lec_pass));
             Lecturer lec = _context.lecturerInfo
-         .Where(x => x.lec_id == login.lec_id && x.lec_pass==lecPass).FirstOrDefault();
+         .Where(x => x.lec_id == login.lec_id).FirstOrDefault();
 
             if(lec != null)
             {
-                lec.auth_key = generateJwtToken(lec);
+                string key= generateJwtToken(lec);
+                lec.auth_key = key;
                 _context.SaveChanges();
                 ResponseLogin response = new ResponseLogin()
                 {
                     lec_id = lec.lec_id,
                     lec_name=lec.lec_name,
                     lec_surname=lec.lec_surname,
-                    accesToken=  lec.auth_key
+                    accesToken=  lec.auth_key,
                 };
+
+
                 
-                return Json(response);
+                return Json(new SuccessResponse() { status=200,Response= response });
             }
 
-            throw new AuthenticationException("Lecturer ID veya Şifre yanış girilmiştir.Lütfen tekrar deneyiniz.");
+            return Json(new ErrorMessage() { status = 500, message = "Kullanıcı Adı veya Şifre yanlış" });
         }
 
         string hash = "";
@@ -75,24 +78,44 @@ namespace fdoCurrApp.Controllers
             }
         }
 
+        //private string generateJwtToken(Lecturer lec)
+        //{
+        //    // generate token that is valid for 7 days
+        //    var tokenHandler = new JwtSecurityTokenHandler();
+        //    var key = Encoding.ASCII.GetBytes(Convert.ToString(lec.lec_id));
+        //    var tokenDescriptor = new SecurityTokenDescriptor
+        //    {
+        //        Subject = new ClaimsIdentity(new[] {
+        //            new Claim("id", lec.lec_id.ToString()),
+        //            new Claim("name", lec.lec_name.ToString()),
+        //            new Claim("surname", lec.lec_surname.ToString()),
+        //            new Claim("login-time", DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss")),
+        //        }),
+        //        Expires = DateTime.UtcNow.AddDays(0.5),
+        //        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        //    };
+        //    var token = tokenHandler.CreateToken(tokenDescriptor);
+        //    return tokenHandler.WriteToken(token);
+        //}
+
         private string generateJwtToken(Lecturer lec)
         {
             // generate token that is valid for 7 days
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(Convert.ToString(lec.lec_id));
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Convert.ToString(lec.lec_id)));
+            var credentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
             {
-                Subject = new ClaimsIdentity(new[] {
-                    new Claim("id", lec.lec_id.ToString()),
+                new Claim("id", lec.lec_id.ToString()),
                     new Claim("name", lec.lec_name.ToString()),
                     new Claim("surname", lec.lec_surname.ToString()),
                     new Claim("login-time", DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss")),
-                }),
-                Expires = DateTime.UtcNow.AddDays(0.5),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+
+            var token = new JwtSecurityToken(Convert.ToString(lec.lec_id), Convert.ToString(lec.lec_id),claims,expires:DateTime.Now.AddMinutes(120),
+                signingCredentials:credentials);
+
+            //return token.EncodedHeader+"."+token.EncodedPayload;
+            return token.EncodedHeader;
         }
 
 
