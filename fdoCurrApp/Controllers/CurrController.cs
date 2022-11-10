@@ -1,6 +1,7 @@
-using fdoCurrApp.Context;
+﻿using fdoCurrApp.Context;
 using fdoCurrApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,35 @@ namespace fdoCurrApp.Controllers
         {
             List<Curr> curr = _context.curr.ToList();
             return View("Index", curr);
+        }
+
+        [HttpGet]
+        public JsonResult List(string id)
+        {
+            int page = Int32.Parse(HttpContext.Request.Query["id"]);
+
+            Lecturer lec = _context.lecturerInfo
+         .Where(x => x.lec_id == page).FirstOrDefault();
+
+            if (lec != null)
+            {
+                List<Curr> curr = _context.curr.Where(x => x.fdo == lec.fdo_id).ToList();
+                List<Course> course= _context.course.ToList();
+
+                ResponseCurr list = new ResponseCurr()
+                {
+                    courseList = course,
+                    currList = curr
+                };
+
+                return Json(new SuccessResponse() { status = 200, Response = list });
+            }
+
+            return Json(new ErrorMessage() { status = 500, message = "Accsess Token Hatası" });
+
+        
+            
+
         }
 
        

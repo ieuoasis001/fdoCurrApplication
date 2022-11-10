@@ -1,5 +1,3 @@
-
-
 <div class="row">   
     <div class="col-lg-8"> 
         <div class="row">
@@ -93,6 +91,10 @@
         </table>
     </div>
 </div>
+
+
+
+
 <style>
 
     .mr-4 {
@@ -113,6 +115,7 @@
         color: rgb(33,37,41);
     }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     function closer(){
         var element = document.getElementById("openELEC");
@@ -124,5 +127,48 @@
 
         }
     }
+
+</script>
+
+<script type="text/javascript">
+
+
+    var accesToken = localStorage.getItem("accesToken");
+    var lec_id = localStorage.getItem("lec_id");
+    var lec_name = localStorage.getItem("lec_name");
+    var lec_surname = localStorage.getItem("lec_surname");
+
+    if (accesToken == undefined || accesToken == "") {
+        window.location.href = "/Login/Index";
+    }
+
+   
+    $.ajax({
+        url: "/Curr/List?id="+lec_id,
+        type: "get",
+        dataType: "JSON",
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            authorization: accesToken
+        },
+        success: function (data) {
+            if (data.status == 200) {
+               console.log(data);
+
+            }
+            else {
+                alert(data.message);
+                window.location.href = "/Login/Index";
+            }
+        },
+        error: function (xhr, desc, err) {
+
+
+        }
+    });
+
+
+
+
 
 </script>
