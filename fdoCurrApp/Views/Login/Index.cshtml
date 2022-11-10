@@ -89,9 +89,7 @@
         </div>
     </form>
 
-    <form id="loginCurr" asp-action="Curr/Index">
-        <input asp-for="lec_id" id="s_lec_id" type="hidden" placeholder="Lecturer Id" />
-    </form>
+   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -117,14 +115,9 @@
                         localStorage.setItem("lec_name", data.response.lec_name);
                         localStorage.setItem("lec_surname", data.response.lec_surname);
 
-                        $('#s_lec_id').val(data.response.lec_id);
-                        $('#loginCurr').submit();
-                        //{
-                        //    Headers: {
-                        //        authorization:
-                        //        "bearer " + data.response.accesToken,
-                        //            }
-                        //}
+                        //$('#s_lec_id').val(data.response.lec_id);
+                        //$('#loginCurr').submit();
+                        window.location.href = "/Curr/Index";
                       
                     }
                     else
@@ -138,6 +131,9 @@
                 }
             });
         });
+       
+    
+
 
 
 

@@ -55,7 +55,7 @@ namespace fdoCurrApp.Controllers
 
 
                 
-                return Json(new SuccessResponse() { status=200,Response= response });
+                return Json(new SuccessResponse() { status=200,Response=response});
             }
 
             return Json(new ErrorMessage() { status = 500, message = "Kullanıcı Adı veya Şifre yanlış" });
