@@ -27,15 +27,6 @@ namespace fdoCurrApp.Controllers
         {
             List<Curr> curr = _context.curr.ToList();
             return View("Index", curr);
-
-            ViewBag.Title = "aaaaMüfredat kontrol sayfası";
-            ViewBag.Message = "Sadece Seçmeli Ders İçerikleri Girilecektir";
-
-            Curr curriculum = new Curr();
-            curriculum.uniCode = "ACC 100";
-            curriculum.courseName = "Matematik";
-
-          return View(curriculum);
         }
 
        
