@@ -18,8 +18,35 @@
 /.vs/fdoCurrApp/FileContentIndex/a37b5ed9-7728-488a-a9d5-aba22d1f2fd8.vsidx
 /.vs/fdoCurrApp/FileContentIndex/9e6ed50b-0b39-4cf3-b18e-291f492f04a6.vsidx
 /.vs/fdoCurrApp/FileContentIndex/62c6d1ca-268e-4f18-9471-19a1d4edc8fb.vsidx
+<<<<<<< HEAD
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.AspNet.Identity.Core.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.AspNet.Identity.EntityFramework.dll
+/fdoCurrApp/bin/Debug/net6.0/System.Text.Json.dll
+/fdoCurrApp/obj/Debug/net6.0/fdoCurrApp.Migrations._new.resources
+/fdoCurrApp/obj/Debug/net6.0/fdoCurrApp.Migrations.InitialCreate.resources
+/fdoCurrApp/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/fdoCurrApp/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/fdoCurrApp/bin/Debug/net6.0/Mono.TextTemplating.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/fdoCurrApp/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll
+/.vs/fdoCurrApp/FileContentIndex/e6515ac1-266a-4137-b00a-41ca9a7df006.vsidx
+/.vs/fdoCurrApp/FileContentIndex/bbd270a5-46a0-42c9-8e77-951956e9caed.vsidx
+/.vs/fdoCurrApp/FileContentIndex/689d841f-e708-48ab-be69-7cd685e3e882.vsidx
+/.vs/fdoCurrApp/FileContentIndex/5e6b9b96-9d47-4aca-84df-00f73adfbba4.vsidx
+=======
 /.vs/fdoCurrApp/FileContentIndex/f496dee5-6d7e-462a-9091-a246de499d7b.vsidx
 /.vs/fdoCurrApp/FileContentIndex/5f12cfba-ebbc-4aaf-9ec5-57f29a01d786.vsidx
 /.vs/fdoCurrApp/FileContentIndex/52e7fee8-318e-49f3-b1ea-b2dcf0f5ea91.vsidx
 /.vs/fdoCurrApp/FileContentIndex/2c442785-3038-4fdf-afe4-38c1c429b8a3.vsidx
 /.vs/fdoCurrApp/FileContentIndex/d87202d7-b957-4d60-8bd9-b5686375f0da.vsidx
+>>>>>>> origin/main
+/.vs/fdoCurrApp/FileContentIndex/db1827be-6ae2-4da7-9420-9336787f9c33.vsidx
+/.vs/fdoCurrApp/FileContentIndex/986f3fed-ca04-41c9-bcbb-c9aec5fdee63.vsidx
+/.vs/fdoCurrApp/FileContentIndex/67125cce-74a7-4d1e-9e75-b48249589f19.vsidx
+/.vs/fdoCurrApp/FileContentIndex/58b5b783-e068-4cbd-a4da-1ddc89c988be.vsidx

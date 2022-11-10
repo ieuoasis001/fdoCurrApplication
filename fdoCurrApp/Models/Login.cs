@@ -8,6 +8,6 @@ namespace fdoCurrApp.Models
         public int lec_id { get; set; }
         [Required]
         [StringLength(32)]
-        public int lec_pass { get; set; }
+        public string lec_pass { get; set; }
     }
 }
