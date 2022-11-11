@@ -37,7 +37,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Finance Mobile Application-UX/UI Design Screen One</title>
+    <title>İzmir Ekonomi Üniveristesi Müfradat Giriş Platformu</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -48,41 +48,31 @@
 <body>
    <form asp-action="Index">
         <div class="screen-1">
-            <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="https://play-lh.googleusercontent.com/ZjgaoEV1vch9-tCkfS1CmZhZZbOUyLlUXm4cToQ7kHew9CCxXSBjuQlmBJbruQZF05w" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
-            <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
-            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-            <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
-            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-            <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
-            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-            <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
-            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-            <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
-            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
-    </g>
-            <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
-            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
-    </g>
-  </svg>
+            <img style="width:132px;    margin-left: auto;
+    margin-right: auto;" src="https://seeklogo.com/images/I/Izmir_Ekonomi_Universitesi-logo-1DBBF2BAF5-seeklogo.com.png" />
+            <h4 style="text-align:center;margin-top: -10px;
+    margin-bottom: 44px;">
+                Müfradat Giriş Platformu
+            </h4>
 
             <div class="email">
                 <label asp-for="lec_id" >Lecturer Id</label>
                 <div class="sec-2">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input asp-for="lec_id" type="number"   placeholder="Lecturer Id" />
+                    <input id="lec_id" asp-for="lec_id" type="number" placeholder="············" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
+                    
                 </div>
+                <span style="color:red;font-size: 11px;float: right;text-align: right;" id="lec_id_span"></span>
             </div>
             <div class="password">
-                <label asp-for="lec_id">Password</label>
+                <label asp-for="lec_pass">Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas"  type="password" asp-for="lec_pass" placeholder="············" />
+                    <input class="pas" id="lec_pass" type="password" asp-for="lec_pass" placeholder="············" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
                     <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+                    
                 </div>
+                <span style="color:red; font-size: 11px;float: right;text-align: right;" id="lec_pass_span"></span>
             </div>
             <button class="login">Login </button>
 
@@ -96,9 +86,39 @@
 
     <script type="text/javascript">
 
-      
+        localStorage.setItem("accesToken", "");
+        localStorage.setItem("lec_id", "");
+        localStorage.setItem("lec_name", "");
+        localStorage.setItem("lec_surname", "");
+
+        function zorunluAlan()
+        {
+            var d=0;
+            var in_lec_id = $("#lec_id").val();
+            var in_lec_pass = $("#lec_pass").val();
+            if (in_lec_id == '' || in_lec_id == null || in_lec_id == undefined) {
+                $("#lec_id_span").html("Zorunlu Alan");
+                d=1;
+            }
+
+            if (in_lec_pass == '' || in_lec_pass == null || in_lec_pass == undefined) {
+                $("#lec_pass_span").html("Zorunlu Alan");
+                d = 1;
+            }
+            if(d==1)
+            {
+                return false;
+            }
+
+            $("#lec_id_span").html("");
+            $("#lec_pass_span").html("");
+            return true;
+        }
 
         $(document).on("submit", "form", function (event) {
+            if (zorunluAlan()==false) {
+                return false;
+            }
             event.preventDefault();
             $.ajax({
                 url: $(this).attr("action"),
