@@ -3,6 +3,6 @@
     public class ResponseCurr
     {
         public List<Curr> currList { get; set; }
-        public List<CurrElecStuCount> currElecStuCountList { get; set; }
+        public List<ResponseCurrElecStuCount> currElecStuCountList { get; set; }
     }
 }

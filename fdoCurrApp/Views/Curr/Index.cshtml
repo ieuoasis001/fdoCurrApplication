@@ -236,7 +236,7 @@
 
                data.response.currList.forEach(k=>{
                         var ders = "<tr>"
-                            + "<td>" + ((k.uniCode.search("ELEC")) != -1 ? "<a class='pointer' onclick='closer()' style='color: #ff0404;font - weight: 900;text - decoration: none; '>" + k.uniCode + "</a>" : k.uniCode) + "</td>"
+                            + "<td>" + ((k.uniCode.search("ELEC")) != -1 ? "<a class='pointer' onclick='closer()' style='color: #ff0404;font-weight: 900;text-decoration: none; '>" + k.uniCode + "</a>" : k.uniCode) + "</td>"
                             + "<td>" + k.courseName + "</td>"
                             + " <td>" + k.credit + "</td>"
                             + "<td>" + k.ects + "</td>"
@@ -248,10 +248,10 @@
                 data.response.currElecStuCountList.forEach(m => {
                     
                     var ders = "<tr>"
-                        + "<td><input type='checkbox' id = 'secmeliGrubu' name = 'secmeliGrubu' /></td>" 
+                        + "<td><input type='checkbox' id = 'secmeliGrubu' name = 'secmeliGrubu'   /></td>" 
                         + "<td>" + (m.uniCode) + "</td>"
-                        + " <td>0</td>"
-                        + "<td>0</td>"
+                        + "<td>" + (m.credit) + "</td>"
+                        + "<td>" + (m.ects) + "</td>"
                         + "<td>" + m.stuCount + "</td>"
                         + "<td>" + m.overallCount + "</td>"
                         + "</tr>";
