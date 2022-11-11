@@ -41,11 +41,11 @@ namespace fdoCurrApp.Controllers
             if (lec != null)
             {
                 List<Curr> curr = _context.curr.Where(x => x.fdo == lec.fdo_id).ToList();
-                List<Course> course= _context.course.ToList();
+                List<CurrElecStuCount> course= _context.currElecStuCount.ToList();
 
                 ResponseCurr list = new ResponseCurr()
                 {
-                    courseList = course,
+                    currElecStuCountList = course,
                     currList = curr
                 };
 

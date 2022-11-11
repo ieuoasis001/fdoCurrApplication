@@ -12,15 +12,21 @@ namespace fdoCurrApp.Models
         public int fdo { get; set; }
         public string faculty { get; set; }
         public string department { get; set; }
-        public string currCode { get; set; }
+        public string currentCurr { get; set; }
         public string isPOOL { get; set; }
         public int semester { get; set; }
+        public int curr_class { get; set; }
         public string uniCode { get; set; }
         public int stuCount { get; set; }
         public int overallCount { get; set; }
-        public int isSFL { get; set; }
 
-        //public int class { get; set; }
+        public string isSFL { get; set; }
+        
+        
+        
+       
+
+        
 
     }
 }
