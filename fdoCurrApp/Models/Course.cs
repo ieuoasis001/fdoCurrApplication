@@ -16,6 +16,8 @@ namespace fdoCurrApp.Models
         public string? courseName { get; set; }
         public int? ects { get; set; }
         public int? credit { get; set; }
+        public string? deptLangName { get; set; }
+        public int? deptLangCode { get; set; }
     }
 }
 

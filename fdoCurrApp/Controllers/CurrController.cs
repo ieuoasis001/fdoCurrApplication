@@ -61,6 +61,8 @@ namespace fdoCurrApp.Controllers
             if (lec != null)
             {
 
+                Fdo fdo_lang = _context.fdo.Where(x => x.id == lec.fdo_id).FirstOrDefault();
+
                 List<ResponseCurrElecCourses> currElecCourses =
                      (from _course_elec in _context.currElecCourses
                       join _course in _context.course on _course_elec.courseId equals _course.courseId
@@ -83,6 +85,14 @@ namespace fdoCurrApp.Controllers
                   .OrderBy(k=>k.course.uniCode)
                   .ToList();
 
+                if(fdo_lang.deptLangCode==0)
+                {
+                    var responseCurrElecStuCountDil = responseCurrElecStuCount.Where(x => x.course.deptLangCode != 0);
+                }
+                else
+                {
+                    var responseCurrElecStuCountDil = responseCurrElecStuCount.Where(x => x.course.deptLangCode == 0);
+                }
 
 
 
