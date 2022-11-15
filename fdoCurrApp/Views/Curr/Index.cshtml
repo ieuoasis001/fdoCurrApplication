@@ -204,11 +204,19 @@
                 $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("activeEnabletr");
                 $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("enabletr");
                     elecSelecList(k);
+<<<<<<< HEAD
 
         secilen=k;
         $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
         $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
                    
+=======
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("enabletr");
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("activeEnabletr");
+                    secilen=k;
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
+>>>>>>> db903e47979cc161440d4a2fe22ebbcddf669f36
                     $('#openELEC').show();
                 }
 
@@ -426,6 +434,9 @@
             }
         });
     }
+
+
+  
 
     function courseDrop(sc) {
         fData = new FormData();
