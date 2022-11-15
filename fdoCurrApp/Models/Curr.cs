@@ -14,7 +14,7 @@ namespace fdoCurrApp.Models
     public string department { get; set; }
     public string currCode { get; set; }
     public int semester { get; set; }
-    public int curr_class { get; set; }
+    public int currClass { get; set; }
     public string uniCode { get; set; }
     public string courseName { get; set; }
     public int ects { get; set; }

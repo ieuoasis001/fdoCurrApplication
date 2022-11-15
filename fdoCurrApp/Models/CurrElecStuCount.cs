@@ -15,7 +15,7 @@ namespace fdoCurrApp.Models
         public string currentCurr { get; set; }
         public string isPOOL { get; set; }
         public int semester { get; set; }
-        public int curr_class { get; set; }
+        public int currClass { get; set; }
         public string uniCode { get; set; }
         public int stuCount { get; set; }
         public int overallCount { get; set; }

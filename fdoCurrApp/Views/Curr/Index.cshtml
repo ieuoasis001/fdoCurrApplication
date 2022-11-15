@@ -1,6 +1,6 @@
 <div class="row" style="padding: 10px;">
-        <div class="col-lg-3" style="font-size: 12px;">
-        <table class="table table-striped table-responsive">
+    <div class="col-lg-3 table-responsive" style="font-size: 12px;">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th colspan="5">Müfredat Listesi</th>
@@ -12,75 +12,37 @@
                     <div style="width:100%; height:77vh; overflow:auto;">
                         @for (var j = 1; j < 5; j++)
                         {
-                            <table class="table table-striped table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th colspan="5">@j .Sınıf</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <table class="table table-striped table-responsive">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="5">Güz Dönemi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <table class="table table-striped table-responsive">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Ders Kodu</th>
-                                                                        <th>Ders Adı</th>
-                                                                        <th>İEU Kredisi</th>
-                                                                        <th>AKTS Kredisi</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="ders_1_@j">
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table class="table table-striped table-responsive">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="5">Bahar Dönemi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <table class="table table-striped table-responsive">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Ders Kodu</th>
-                                                                        <th>Ders Adı</th>
-                                                                        <th>İEU Kredisi</th>
-                                                                        <th>AKTS Kredisi</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="ders_2_@j">
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                @for (var m = 1; m < 3; m++)
+                                {
+                                    var donem = (@m == 1 ? "Güz" : "Bahar");
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="5">@j. Sınıf @donem Dönemi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <table class="table table-striped table-responsive">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Ders Kodu</th>
+                                                                <th>Ders Adı</th>
+                                                                <th>İEU Kredisi</th>
+                                                                <th>AKTS Kredisi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="ders_@j@m">
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                }
 
-                        }
+                            }
                         </div>
                     </td>
                 </tr>
@@ -90,8 +52,8 @@
     </div>
 
 
-    <div class="col-lg-6" style="font-size: 12px;" id="openELEC">
-        <table class="table table-striped table-responsive">
+    <div class="col-lg-6 table-responsive" style="font-size: 12px;" id="openELEC">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th colspan="5" id="selectCurrCourse">Seçmeli Ders Listesi</th>
@@ -104,26 +66,22 @@
                         <table class="table table-striped table-responsive" >
                             <thead>
                                 <tr>
-                                    <th>Ekle</th>
-                                    <th>Fakülte</th>
-                                    <th>Bölüm</th>
-                                    <th>Ders Kodu</th>
-                                    <th>Ders Adı</th>
-                                    <th>İEU Kredisi</th>
-                                    <th>AKTS Kredisi</th>
-                                    <th>B.A Öğrenci Listesi</th>
-                                    <th>Ü.A Öğrenci Listesi</th>
+                                        <th style="width:46px">Ekle</th>
+                                        <th>Fakülte</th>
+                                        <th>Bölüm</th>
+                                        <th style="width: 80px;">Ders Kodu</th>
+                                        <th>Ders Adı</th>
+                                        <th style="width: 74px;">İEU Kredisi</th>
+                                        <th style="width: 76px;">AKTS Kredisi</th>
                                 </tr>
                                     <tr>
-                                        <th>  </th>
-                                        <th><input id="fac_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;max-width: 100px;" placeholder="Fakülte Ara" /></th>
-                                        <th><input id="dep_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;max-width: 80px;" placeholder="Bölüm Ara" /></th>
-                                        <th><input id="ucode_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;max-width: 60px;" placeholder="Ders Kodu Ara" /></th>
-                                        <th><input id="uname_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" placeholder="Ders Adı Ara" /></th>
-                                        <th><input id="ieucre_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;max-width: 40px;" placeholder="İEU Kredi Ara" /></th>
-                                        <th><input id="acts_ara" style="box-shadow: 0px 0px 2px 0px #c7c7c7;max-width: 40px;" placeholder="AKTS Kredi Ara" /></th>
-                                        <th></th>
-                                        <th></th>
+                                        <th style="width:46px">  </th>
+                                        <th><input id="fac_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Fakülte Ara" /></th>
+                                        <th><input id="dep_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Bölüm Ara" /></th>
+                                        <th style="width: 80px;"><input id="ucode_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Ders Kodu Ara" /></th>
+                                        <th><input id="uname_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Ders Adı Ara" /></th>
+                                        <th style="width: 74px;"><input id="ieucre_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Ör:<=3" /></th>
+                                        <th style="width: 76px;"><input id="acts_ara" onkeyup="search();" style="box-shadow: 0px 0px 2px 0px #c7c7c7;width:100%" placeholder="Ör:>4" /></th>
                                     </tr>
                             </thead>
                             <tbody id="elec_list">
@@ -138,11 +96,11 @@
         </table>
     </div>
 
-   <div class="col-lg-3" style="font-size: 12px;" id="alinanElecListesi">
-        <table class="table table-striped table-responsive">
+    <div class="col-lg-3 table-responsive" style="font-size: 12px;" id="alinanElecListesi">
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th colspan="5">Müfredata Seçilen Ders Listesi</th>
+                    <th colspan="5" id="selectCourse"></th>
                 </tr>
             </thead>
             <tbody>
@@ -152,12 +110,13 @@
                             <table class="table table-striped table-responsive">
                                 <thead>
                                     <tr>
-                                        <th>Ekle</th>
+                                        <th>Çıkar</th>
+                                        <th>Fakülte</th>
+                                        <th>Bölüm</th>
                                         <th>Ders Kodu</th>
+                                        <th>Ders Adı</th>
                                         <th>İEU Kredisi</th>
                                         <th>AKTS Kredisi</th>
-                                        <th>B.A Öğrenci Listesi</th>
-                                        <th>Ü.A Öğrenci Listesi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="secilen_elec_list">
@@ -203,6 +162,37 @@
         width: 100%;
         border: 1px solid #ddd;
     }
+
+    .addDropButton
+    {
+        max-width: 25px;
+        max-height: 25px;
+        line-height: 1px;
+        margin: 0px;
+        padding: 3px;
+    }
+
+    .disabletr{
+        color: #9b9999 !important;
+    }
+
+    .enabletr {
+        color: #000000 !important;
+        font-weight: bold !important;
+        background: #ffdab4 !important;
+        cursor: pointer;
+    }
+
+    .enabletr:hover {
+            background: #ffb569 !important;
+    }
+
+    .activeEnabletr {
+        color: #000000 !important;
+        font-weight: bold !important;
+        background: #f6a756 !important;
+        cursor: pointer;
+    }
 </style>
             
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -211,8 +201,7 @@
 <script type="text/javascript">
      //$('#openELEC').hide();
                 function closer(k) {
-                    secilen=JSON.parse(k);
-
+                    elecSelecList(k);
                     $('#openELEC').show();
                 }
 
@@ -220,6 +209,22 @@
     var lec_id = localStorage.getItem("lec_id");
     var lec_name = localStorage.getItem("lec_name");
     var lec_surname = localStorage.getItem("lec_surname");
+
+
+    var selectCourses=[];
+    var secilen = {
+        uniCode: "",
+        courseName: "",
+        credit: "",
+        ects: "",
+        semester: "",
+        currClass: "",
+        department: "",
+        faculty: "",
+        fdo: "",
+        id: "",
+        currCode: "",
+    }
 
     if (accesToken == undefined || accesToken == "") {
         window.location.href = "/Login/Index";
@@ -239,55 +244,24 @@
                console.log(data);
 
                say=0;
-               var secilen={
-                    uniCode:"",
-                    courseName:"",
-                    credit:"",
-                    ects:"",
-                    semester:"",
-                    curr_class:""
-               }
-               data.response.currList.forEach(k=>{
+       
+                data.response.forEach(k => {
                     if (k.uniCode.search("ELEC") != -1 && say==0) {
-                        secilen = {
-                            uniCode: k.uniCode,
-                            courseName: k.courseName,
-                            credit: k.credit,
-                            ects: k.credit,
-                            semester: k.semester,
-                            curr_class: k.curr_class
-                        };
+                        secilen = k
                         say++;
                    }
-                    var ders = "<tr style='" + (k.uniCode.search("ELEC") != -1 ? "color: #000000;font-weight: bold !important;background: #ffb569; " : "color: #9b9999; ") + "' > "
-                        + "<td>" + ((k.uniCode.search("ELEC")) != -1 ? "<a class='pointer' onclick='closer('" + JSON.stringify(k) + "')' style='font-weight: 900;text-decoration: none; '>" + k.uniCode + "</a>" : k.uniCode) + "</td>"
+                    var ders = "<tr id='" + k.currClass + '_' + k.semester + '_' + k.uniCode.replace(" ", "_") + "' class='" + (k.uniCode.search("ELEC") != -1 ? "enabletr" : "disabletr ") + "' " + ((k.uniCode.search("ELEC")) != -1 ? " onclick='closer(" + JSON.stringify(k) + ")'" :"" ) + "  > "
+                        + "<td>" + k.uniCode+ "</td>"
                             + "<td>" + k.courseName + "</td>"
                             + " <td>" + k.credit + "</td>"
                             + "<td>" + k.ects + "</td>"
                             + "</tr>";
-                        $("#ders_" + k.semester + "_" + k.curr_class).append(ders);
-                        
+                    $("#ders_" + k.currClass + "" + k.semester).append(ders);
 
                })
-
-                $("#selectCurrCourse").html(secilen.curr_class + '. Sınıf ' + (secilen.semester == 1 ? 'Güz' : 'Bahar') +" "+ secilen.uniCode+' (Kredi:'+secilen.credit+' - AKTS:'+secilen.ects+')')
-
-                data.response.currElecStuCountList.forEach(m => {
-                    
-                    var ders = "<tr>"
-                        + "<td><input type='checkbox' id = 'secmeliGrubu' name = 'secmeliGrubu'   /></td>" 
-                        + "<td>" + (m.faculty) + "</td>"
-                        + "<td>" + (m.department) + "</td>"
-                        + "<td>" + (m.uniCode) + "</td>"
-                        + "<td>" + (m.courseName) + "</td>"
-                        + "<td>" + (m.credit) + "</td>"
-                        + "<td>" + (m.ects) + "</td>"
-                        + "<td>" + m.stuCount + "</td>"
-                        + "<td>" + m.overallCount + "</td>"
-                        + "</tr>";
-                    $("#elec_list").append(ders);
-
-                })
+                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
+                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
+                elecSelecList(secilen);
 
             }
             else {
@@ -302,7 +276,253 @@
     });
 
 
+    function elecSelecList(secilen) {
+        fData=new FormData();
+        fData.append("uniCode", secilen.uniCode);
+        fData.append("courseName", secilen.courseName);
+        fData.append("credit", secilen.credit);
+        fData.append("ects", secilen.ects);
+        fData.append("semester", secilen.semester);
+        fData.append("curr_class", secilen.currClass);
+        fData.append("department", secilen.department);
+        fData.append("faculty", secilen.faculty);
+        fData.append("fdo", secilen.fdo);
+        fData.append("id", secilen.id);
+        fData.append("currCode", secilen.currCode);
+        fData.append("lec_id", lec_id);
 
+        $.ajax({
+            url: "/Curr/Eleclist",
+            type: "post",
+            data: fData,
+               processData: false,
+                contentType: false,
+            //headers: {
+            //    'Content-Type': 'multipart/form-data',
+            //    authorization: accesToken
+            //},
+            success: function (data) {
+                if (data.status == 200) {
+                    $("#selectCurrCourse").html(secilen.currClass + '. Sınıf ' + (secilen.semester == 1 ? 'Güz' : 'Bahar') + " " + secilen.uniCode + ' (Kredi:' + secilen.credit + ' - AKTS:' + secilen.ects + ') dersi için seçilecek ders listesi')
+                    $("#selectCourse").html(secilen.currClass + '. Sınıf ' + (secilen.semester == 1 ? 'Güz' : 'Bahar') + " " + secilen.uniCode + ' (Kredi:' + secilen.credit + ' - AKTS:' + secilen.ects + ') dersi için seçilen ders listesi')
+                    
+                    selectCourseList(data.response.course);
+                    selectCourses = data.response.course;
+                    $("#secilen_elec_list").html("");
+                    data.response.currElecCourses.forEach(m => {
+
+                        var ders = "<tr>"
+                            + "<td><button class='btn btn-danger btn-sm rounded-circle addDropButton' onclick='courseDrop(" + JSON.stringify({ selectCourse: m.currElecCourses, selectCurr: secilen }) + ")'><i class='fa fa-minus' /></button></td>"
+                            + "<td>" + (m.course.faculty) + "</td>"
+                            + "<td>" + (m.course.department) + "</td>"
+                            + "<td>" + (m.course.uniCode) + "</td>"
+                            + "<td>" + (m.course.courseName) + "</td>"
+                            + "<td>" + (m.course.credit) + "</td>"
+                            + "<td>" + (m.course.ects) + "</td>"
+                            + "</tr>";
+                        $("#secilen_elec_list").append(ders);
+                    })
+
+                }
+                else {
+                    alert(data.message);
+                    window.location.href = "/Login/Index";
+                }
+            },
+            error: function (xhr, desc, err) {
+
+            }
+        });
+        }
+
+
+        function selectCourseList(data)
+        {
+            $("#elec_list").html("");
+            data.forEach(m => {
+            var ders = "<tr>"
+                + "<td style='width: 46px'><button class='btn btn-success btn-sm rounded-circle addDropButton' onclick='courseAdd(" + JSON.stringify({ selectCourse: m, selectCurr: secilen }) + ")'><i class='fa fa-plus' /></button></td>"
+                + "<td>" + (m.faculty) + "</td>"
+                + "<td>" + (m.department) + "</td>"
+                + "<td style='width: 80px'>" + (m.uniCode) + "</td>"
+                + "<td>" + (m.courseName) + "</td>"
+                + "<td style='width: 74px'>" + (m.credit) + "</td>"
+                + "<td style='width: 76px'>" + (m.ects) + "</td>"
+                + "</tr>";
+            $("#elec_list").append(ders);
+
+
+           });
+        }
+    function courseAdd(sc) {
+        fData = new FormData();
+        fData.append("uniCode", sc.selectCurr.uniCode);
+        fData.append("currCode", sc.selectCurr.currCode);
+        fData.append("courseId", sc.selectCourse.courseId);
+        fData.append("lec_id", lec_id);
+
+        $.ajax({
+            url: "/Curr/AddElec",
+            type: "post",
+            data: fData,
+            processData: false,
+            contentType: false,
+            //headers: {
+            //    'Content-Type': 'multipart/form-data',
+            //    authorization: accesToken
+            //},
+            success: function (data) {
+                if (data.status == 200) {
+                    alert(data.response);
+                    elecSelecList(sc.selectCurr)
+
+                }
+                else {
+                    alert(data.message);
+                    window.location.href = "/Login/Index";
+                }
+            },
+            error: function (xhr, desc, err) {
+
+            }
+        });
+    }
+
+    function courseDrop(sc) {
+        fData = new FormData();
+        fData.append("id", sc.selectCourse.id);
+
+        $.ajax({
+            url: "/Curr/DeleteElec",
+            type: "post",
+            data: fData,
+            processData: false,
+            contentType: false,
+            //headers: {
+            //    'Content-Type': 'multipart/form-data',
+            //    authorization: accesToken
+            //},
+            success: function (data) {
+                if (data.status == 200) {
+                    alert(data.response);
+                    elecSelecList(sc.selectCurr)
+
+                }
+                else {
+                    alert(data.message);
+                    window.location.href = "/Login/Index";
+                }
+            },
+            error: function (xhr, desc, err) {
+
+            }
+        });
+    }
+
+
+    function search()
+    {
+        var fak=$("#fac_ara").val();
+        var dep = $("#dep_ara").val();
+        var ucode = $("#ucode_ara").val();
+        var uname = $("#uname_ara").val();
+        var credit = $("#ieucre_ara").val();
+        var ects = $("#acts_ara").val();
+
+       
+     
+
+        var find = selectCourses.filter(x => {
+            var sonuc=true;
+            if (fak != null && fak != "" && (x.faculty.toUpperCase()).search(fak.toUpperCase()) == -1) {
+                sonuc=false;
+            }
+
+            if (dep != null && dep != "" && (x.department.toUpperCase()).search(dep.toUpperCase()) == -1) {
+                sonuc = false;
+            }
+
+            if (ucode != null && ucode != "" && (x.uniCode.toUpperCase()).search(ucode.toUpperCase()) == -1) {
+                 sonuc = false;
+            }
+            if (uname != null && uname != "" && (x.courseName.toUpperCase()).search(uname.toUpperCase()) == -1) {
+               
+                sonuc = false;
+            }
+            if (credit != null && credit != "") {
+                if (credit.search('<=')!=-1) {
+                    var parcala = credit.split("<=");
+                    if (+x.credit > +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (credit.search('>=') != -1) {
+                    var parcala = credit.split(">=");
+                    if (+x.credit < +parcala[1]) {
+                        sonuc = false;
+                    }
+                } 
+                else if (credit.search('<') != -1) {
+                    var parcala = credit.split("<");
+                    if (+x.credit >= +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (credit.search('>') != -1) {
+                    var parcala = credit.split(">");
+                    if (+x.credit <= +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (credit.search('=') != -1) {
+                    var parcala = credit.split("=");
+                    if (+x.credit == +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+
+            }
+            if (ects != null && ects != "") {
+                if (ects.search('<=') != -1) {
+                    var parcala = ects.split("<=");
+                    if (+x.ects > +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (ects.search('>=') != -1) {
+                    var parcala = ects.split(">=");
+                    if (+x.ects < +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (ects.search('<') != -1) {
+                    var parcala = ects.split("<");
+                    if (+x.ects >= +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (ects.search('>') != -1) {
+                    var parcala = ects.split(">");
+                    if (+x.ects <= +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else if (ects.search('=') != -1) {
+                    console.log(ects);
+                            var parcala = ects.split("=");
+                            if (+x.ects === +parcala[1]) {
+                                sonuc = false;
+                            }
+                        }
+            }
+
+    return sonuc;
+        });
+
+
+    selectCourseList(find);
+
+    }
 
 
 </script>
