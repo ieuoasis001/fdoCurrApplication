@@ -13,5 +13,6 @@ namespace fdoCurrApp.Context
         public DbSet<Fdo> fdo { get; set; }
         public DbSet<School> school { get; set; }
         public DbSet<CurrElecStuCount> currElecStuCount { get; set; }
+        public DbSet<CurrElecCourses> currElecCourses { get; set; }
     }
 }
