@@ -38,7 +38,7 @@ namespace fdoCurrApp.Controllers
             //Lecturer lec = _context.lecturerInfo.SingleOrDefault(x => x.lec_id == login.lec_id && x.lec_id == login.lec_id);
             string lecPass = Encrypt(Encrypt(login.lec_pass));
             Lecturer lec = _context.lecturerInfo
-         .Where(x => x.lec_id == login.lec_id).FirstOrDefault();
+         .Where(x => x.lec_id == login.lec_id && x.lec_pass == lecPass).FirstOrDefault();
 
             if(lec != null)
             {
@@ -114,8 +114,8 @@ namespace fdoCurrApp.Controllers
             var token = new JwtSecurityToken(Convert.ToString(lec.lec_id), Convert.ToString(lec.lec_id),claims,expires:DateTime.Now.AddMinutes(120),
                 signingCredentials:credentials);
 
-            //return token.EncodedHeader+"."+token.EncodedPayload;
-            return token.EncodedHeader;
+            return token.EncodedHeader+"."+token.EncodedPayload;
+            // return token.EncodedHeader;
         }
 
 

@@ -201,13 +201,14 @@
 <script type="text/javascript">
      //$('#openELEC').hide();
                 function closer(k) {
+                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("activeEnabletr");
+                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("enabletr");
                     elecSelecList(k);
-        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("enabletr");
-        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("activeEnabletr");
+          
                     secilen=k;
         $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
         $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
-                    $('#openELEC').show();
+       $('#openELEC').show();
                 }
 
     var accesToken = localStorage.getItem("accesToken");
@@ -276,7 +277,13 @@
         },
         error: function (xhr, desc, err) {
 
+              SnackBar({
+                        message: err,
+                        status: "danger",
+                        position: 'top-left',
+                        icon: "exclamation"
 
+                    });
         }
     });
 
@@ -330,12 +337,24 @@
 
                 }
                 else {
-                    alert(data.message);
+                    SnackBar({
+                        message: data.message,
+                        status: "danger",
+                        position: 'top-left',
+                        icon: "exclamation"
+
+                    });
                     window.location.href = "/Login/Index";
                 }
             },
             error: function (xhr, desc, err) {
+                 SnackBar({
+                        message: err,
+                        status: "danger",
+                        position: 'top-left',
+                        icon: "exclamation"
 
+                    });
             }
         });
         }
@@ -378,12 +397,26 @@
             //},
             success: function (data) {
                 if (data.status == 200) {
-                    alert(data.response);
+                    SnackBar({
+                        message: data.response,
+                        status: "success",
+                        position: "top-left",
+                        icon:"plus"
+
+                    });
+
+
                     elecSelecList(sc.selectCurr)
 
                 }
                 else {
-                    alert(data.message);
+                    SnackBar({
+                        message: data.message,
+                        status: "danger",
+                        position: 'top-left',
+                        icon: "exclamation"
+
+                    });
                     window.location.href = "/Login/Index";
                 }
             },
@@ -412,12 +445,25 @@
             //},
             success: function (data) {
                 if (data.status == 200) {
-                    alert(data.response);
+                    console.log(data.response);
+                    SnackBar({
+                        message: data.response,
+                        status: "success",
+                        position: "top-left",
+                        icon: "-"
+                         });
+
                     elecSelecList(sc.selectCurr)
 
                 }
                 else {
-                    alert(data.message);
+                    SnackBar({
+                        message: data.message,
+                        status: "danger",
+                        position: 'top-left',
+                        icon: "exclamation"
+
+                    });
                     window.location.href = "/Login/Index";
                 }
             },
@@ -484,7 +530,12 @@
                 }
                 else if (credit.search('=') != -1) {
                     var parcala = credit.split("=");
-                    if (+x.credit == +parcala[1]) {
+                    if (+x.credit !== +parcala[1]) {
+                        sonuc = false;
+                    }
+                }
+                else {
+                    if (+x.credit !== +credit) {
                         sonuc = false;
                     }
                 }
@@ -516,12 +567,16 @@
                     }
                 }
                 else if (ects.search('=') != -1) {
-                    console.log(ects);
                             var parcala = ects.split("=");
-                            if (+x.ects === +parcala[1]) {
+                            if (+x.ects !== +parcala[1]) {
                                 sonuc = false;
                             }
                         }
+                else{
+                    if (+x.ects !== +ects) {
+                        sonuc = false;
+                    }
+                }
             }
 
     return sonuc;
