@@ -12,5 +12,7 @@ namespace fdoCurrApp.Models
         public int d { get; set; }
         public int o { get; set; }
         public string name { get; set; }
+        public string deptLangName { get; set; }
+        public int deptLangCode { get; set; }
     }
 }

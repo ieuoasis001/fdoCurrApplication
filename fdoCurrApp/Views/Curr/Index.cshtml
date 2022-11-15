@@ -100,7 +100,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th colspan="5" id="selectCourse"></th>
+                    <th colspan="5" id="selectCourse">Müfredata Seçilen Ders Listesi</th>
                 </tr>
             </thead>
             <tbody>
@@ -232,6 +232,7 @@
         currCode: "",
     }
 
+
     if (accesToken == undefined || accesToken == "") {
         window.location.href = "/Login/Index";
     }
@@ -252,10 +253,10 @@
                say=0;
        
                 data.response.forEach(k => {
-                    if (k.uniCode.search("ELEC") != -1 && say==0) {
-                        secilen = k
-                        say++;
-                   }
+                   // if (k.uniCode.search("ELEC") != -1 && say==0) {
+                   //     secilen = k
+                   //     say++;
+                   //}
                     var ders = "<tr id='" + k.currClass + '_' + k.semester + '_' + k.uniCode.replace(" ", "_") + "' class='" + (k.uniCode.search("ELEC") != -1 ? "enabletr" : "disabletr ") + "' " + ((k.uniCode.search("ELEC")) != -1 ? " onclick='closer(" + JSON.stringify(k) + ")'" :"" ) + "  > "
                         + "<td>" + k.uniCode+ "</td>"
                             + "<td>" + k.courseName + "</td>"
@@ -265,9 +266,9 @@
                     $("#ders_" + k.currClass + "" + k.semester).append(ders);
 
                })
-                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
-                $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
-                elecSelecList(secilen);
+                //$("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
+                //$("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
+                //elecSelecList(secilen);
 
             }
             else {
@@ -302,6 +303,8 @@
         fData.append("id", secilen.id);
         fData.append("currCode", secilen.currCode);
         fData.append("lec_id", lec_id);
+        fData.append("deptLangName", secilen.deptLangName);
+        fData.append("deptLangCode", secilen.deptLangCode);
 
         $.ajax({
             url: "/Curr/Eleclist",
