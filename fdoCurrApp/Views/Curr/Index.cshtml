@@ -202,6 +202,11 @@
      //$('#openELEC').hide();
                 function closer(k) {
                     elecSelecList(k);
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("enabletr");
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("activeEnabletr");
+                    secilen=k;
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).removeClass("enabletr");
+        $("#" + secilen.currClass + "_" + secilen.semester + '_' + secilen.uniCode.replace(" ", "_")).addClass("activeEnabletr");
                     $('#openELEC').show();
                 }
 
@@ -387,6 +392,9 @@
             }
         });
     }
+
+
+  
 
     function courseDrop(sc) {
         fData = new FormData();
