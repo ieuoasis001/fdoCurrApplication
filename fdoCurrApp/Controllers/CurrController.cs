@@ -81,18 +81,11 @@ namespace fdoCurrApp.Controllers
                   {
                       course = _course
                   })
-                  .Where(k => k.course.ects>= ecurr.ects)
+                  .Where(k => k.course.ects>= ecurr.ects && ((fdo_lang.deptLangCode == 0 && k.course.deptLangCode != 0) || (fdo_lang.deptLangCode != 0 && k.course.deptLangCode == 0)))
                   .OrderBy(k=>k.course.uniCode)
                   .ToList();
 
-                if(fdo_lang.deptLangCode==0)
-                {
-                    var responseCurrElecStuCountDil = responseCurrElecStuCount.Where(x => x.course.deptLangCode != 0);
-                }
-                else
-                {
-                    var responseCurrElecStuCountDil = responseCurrElecStuCount.Where(x => x.course.deptLangCode == 0);
-                }
+              
 
 
 
