@@ -295,7 +295,7 @@
             case "bm":
                 return "js-snackbar-container--bottom-center";
             default:
-                return "js-snackbar-container--bottom-right";
+                return "js-snackbar-container--top-right";
         }
     }
 

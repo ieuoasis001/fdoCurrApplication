@@ -39,8 +39,8 @@
     <meta charset="UTF-8">
     <title>İzmir Ekonomi Üniveristesi Müfradat Giriş Platformu</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script nomodule src="~/js/ionicons.js"></script>
+    <link rel="stylesheet" href="~/css/normalize.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
     <link rel="stylesheet" href="~/css/login.css">
 
@@ -59,7 +59,7 @@
                 <label asp-for="lec_id" >Lecturer Id</label>
                 <div class="sec-2">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input id="lec_id" asp-for="lec_id" type="number" placeholder="············" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
+                    <input id="lec_id" asp-for="lec_id" type="number" placeholder="User ID" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
                     
                 </div>
                 <span style="color:red;font-size: 11px;float: right;text-align: right;" id="lec_id_span"></span>
@@ -68,7 +68,7 @@
                 <label asp-for="lec_pass">Password</label>
                 <div class="sec-2">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input class="pas" id="lec_pass" type="password" asp-for="lec_pass" placeholder="············" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
+                    <input class="pas" id="lec_pass" type="password" asp-for="lec_pass" placeholder="Şifre" style="box-shadow: 0px 0px 2px 0px #c7c7c7;" />
                     <ion-icon class="show-hide" name="eye-outline"></ion-icon>
                     
                 </div>
@@ -80,7 +80,7 @@
     </form>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/js/jquery/jquery.min.js"></script>
 
 
     <script type="text/javascript">
